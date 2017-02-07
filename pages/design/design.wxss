@@ -1,0 +1,19 @@
+/* pages/design/design.wxss */
+page{
+    height: 100%;
+    background-color: #47a86c;
+}
+.design-swpier{
+    height: 100%;
+}
+.design-swpier-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.slide-image{
+    width: 80%;
+    height: 80%;
+    border-radius: 10rpx;
+    box-shadow: 10rpx 10rpx 30rpx rgba(0, 0, 0, .2);
+}

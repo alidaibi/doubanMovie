@@ -1,0 +1,6 @@
+<!--pages/design/design.wxml-->
+<swiper class="design-swpier"  autoplay="true" interval="2000" circular="false">
+    <swiper-item wx:for="{{films}}" wx:for-index="index" wx:for-item="item" data-fid="{{item.id}}" catchtap="filmDetailById" class="design-swpier-item">
+        <image  src="{{item.images.large}}" class="slide-image" ></image>
+    </swiper-item>
+</swiper>

@@ -1,0 +1,57 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view>
+    <view class="fd-header" >
+        <view class="fd-bg" style="background-image: url({{film.images.large}})"></view>
+        <image src="{{film.images.large}}" data-src="{{film.images.large}}" class="fd-image" catchtap="viewLarge" />
+        <view class="fd-detail">
+            <view class="fd-title">{{film.title}}</view>
+            <view class="fd-intro-text">导演: 
+                <block wx:for="{{film.directors}}" wx:for-item="dire">{{dire.name}}</block>
+            </view>
+            <view class="fd-intro-text">演员: 
+                <block wx:for="{{film.casts}}" wx:for-item="cast" wx:for-index="idx">{{cast.name}}
+
+                    <block wx:if="{{idx!==film.casts.length-1}}"> / </block>
+                </block>
+            </view>
+            <view class="fd-intro-text">豆瓣评分: {{film.rating.average}}分</view>
+            <view class="fd-intro-text">上映年份: {{film.year}}年</view>
+        </view>
+        <view class="fd-favorite ">收藏</view>
+    </view>
+    <view class="fd-data">
+        <view class="fd-data-item">
+            <view class="fd-data-num">{{film.reviews_count}}</view>
+            <view class="fd-data-text">看过</view>
+        </view>
+        <view class="fd-data-item">
+            <view class="fd-data-num">{{film.ratings_count}}</view>
+            <view class="fd-data-text">想看</view>
+        </view>
+        <view class="fd-data-item">
+            <view class="fd-data-num">{{film.rating.stars}}</view>
+            <view class="fd-data-text">评分人数</view>
+        </view>
+    </view>
+    <view class="fd-bd">
+        <view class="fd-bd-title">剧情简介</view>
+        <view class="fd-bd-intro">{{film.summary}}</view>
+        <view class="fd-bd-title">导演/演员</view>
+        <view class="fd-bd-person">
+            <view class="fd-bd-person-item" wx:for="{{film.directors}}" wx:for-item="director" bindtap="personByDetail" data-pid="{{director.id}}">
+                <image src="{{director.avatars.large}}" />
+                <view class="fd-bd-person-name">{{director.name}}</view>
+                <view class="fd-bd-preson-text">导演</view>
+            </view>
+            <view class="fd-bd-person-item" wx:for="{{film.casts}}" wx:for-item="cast" bindtap="personByDetail" data-pid="{{cast.id}}">
+                <image src="{{cast.avatars.large}}" />
+                <view class="fd-bd-person-name">{{cast.name}}</view>
+                <view class="fd-bd-preson-text">演员</view>
+            </view>
+        </view>
+        <view class="fd-bd-title">标签</view>
+        <view class="film-tags">
+            <view class="film-tag" wx:for="{{film.genres}}" wx:for-item="tag" wx:for-index="idx">{{ tag }}</view>
+        </view>
+    </view>
+</scroll-view>

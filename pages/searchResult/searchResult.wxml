@@ -1,0 +1,3 @@
+<!--pages/searchResult/searchResult.wxml-->
+<import src="../../components/films/films.wxml" />
+<template is="filmList" data="{{films:films}}"  />

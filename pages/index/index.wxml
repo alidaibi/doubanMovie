@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<scroll-view class="container">
+  <view class="search-bar">
+    <icon type="search" size="16"></icon>
+    <input type="text" placeholder="请输入关键词" placeholder-class="search-placeholder" />
+  </view>
+  <swiper indicator-dots="true"  autoplay="true" interval="2000" circular="false">
+    <swiper-item wx:for="{{bannerList}}" wx:for-index="index" wx:for-item="item" data-fid="{{item.id}}" catchtap="filmDetailById">
+        <image src="{{item.imgUrl}}" class="slide-image" ></image>
+    </swiper-item>
+  </swiper>
+  <import src="../../components/films/films.wxml" />
+  <template is="filmList" data="{{films:films}}"  />
+</scroll-view>

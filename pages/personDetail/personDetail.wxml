@@ -1,0 +1,23 @@
+<!--pages/personDetail/personDetail.wxml-->
+<view class="container">
+    <view class="person-hd">
+        <view class="person-hd-bg" style="background-image: url({{person.avatars.large}})"></view>
+        <view class="person-hd-detail">
+            <image src="{{person.avatars.large}}" class="person-hd-avatar" />
+            <view class="person-name-cn">{{person.name}}</view>
+            <view class="person-name-en">{{person.name_en}}</view>
+            <view class="person-address">{{person.born_place}}</view>
+        </view>
+        <view class="fd-favorite ">收藏</view>
+    </view>
+    <view class="person-bd">
+        <view class="person-bd-work">
+            <view class="person-bd-work-item" wx:for="{{person.works}}" wx:for-index="index" wx:for-item="item" data-fid="{{item.subject.id}}" bindtap="goFilmDetailById">
+                <image src="{{item.subject.images.large}}" class="person-bd-item-img"/>
+                <view class="person-bd-title">{{item.subject.title}}</view>
+                <view class="person-bd-roles">担任: {{item.roles}}</view>
+            </view>
+            
+        </view>
+    </view>
+</view>

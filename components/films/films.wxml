@@ -1,0 +1,16 @@
+<template name="filmList">
+<view class="films">
+  <view class="film-item" wx:for="{{ films }}" wx:for-index="index" wx:for-item="item" data-fid="{{ item.id }}" catchtap="filmDetailById">
+    <view class="film-cover">
+      <image class="film-cover-img" src="{{ item.images.large}}" />
+      <view class="film-rating">{{item.rating.average}}分</view>
+    </view>
+    <view class="film-intro">
+      <view class="film-title">{{item.title}}</view>
+      <view class="film-tags">
+        <view class="film-tag" wx:for="{{item.genres}}" wx:for-item="tag" wx:for-index="idx" catchtap="searchByTag" data-tag="{{tag}}">{{ tag }}</view>
+      </view>
+    </view>
+  </view>
+</view>
+</template>

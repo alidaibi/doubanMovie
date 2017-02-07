@@ -1,0 +1,18 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+    <view class="my-hd">
+        <view class="my-hd-bg" style="background-image: url({{my.avatarUrl}})"></view>
+        <view class="my-hd-detail">
+            <image src="{{my.avatarUrl}}" class="my-hd-avatar" />
+            <view class="my-name-cn">{{my.nickName}}</view>
+            <view class="my-address">{{my.province}} {{my.city}}</view>
+        </view>
+        <!--<view class="fd-favorite ">收藏</view>-->
+    </view>
+    <view class="my-opt">
+        <view class="my-opt-item">
+            <icon class="grid-icon grid-icon-shake"></icon>
+            <view class="my-opt-text">摇一摇</view>
+        </view>
+    </view>
+</view>
